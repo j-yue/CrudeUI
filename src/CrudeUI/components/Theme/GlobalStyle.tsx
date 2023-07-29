@@ -8,4 +8,5 @@ interface IGlobalStyle {
 export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
 :root {
  ${(props) => props.themeStr}
+}
 `;
