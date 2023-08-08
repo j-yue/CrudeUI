@@ -1,15 +1,18 @@
+import { Breakpoint, screens } from "./design-tokens/screens";
+
 import {
   amethyst,
   heliodor,
-  onyx,
   alabaster,
-  jasper,
-  amber,
-  emerald,
-  carnelian,
-  citrine,
-  peridot,
-  rhodochrosite,
+  // onyx,
+  // jasper,
+  // amber,
+  // emerald,
+  // carnelian,
+  // citrine,
+  // peridot,
+  // rhodochrosite,
+  Color,
 } from "./design-tokens/colors";
 
 import {
@@ -23,9 +26,13 @@ import {
   buttonLg,
   captionSm,
   captionLg,
+  Heading,
+  Content,
+  Font,
+  FontStyle,
 } from "./design-tokens/typography";
 
-import { borderSm, borderLg } from "./design-tokens/border";
+import { borderSm, borderLg, Border } from "./design-tokens/border";
 
 import {
   surface,
@@ -35,38 +42,57 @@ import {
   levelTwoLg,
   levelThreeSm,
   levelThreeLg,
+  Elevation,
 } from "./design-tokens/elevation";
 
-export const theme = {
-  screens: {
-    // mobile first
-    // min width
-    small: "390px",
-    // breakpoint where components switch to larger stylers
-    large: "1512px",
-  },
+type ResponsiveScreens = "small" | "large";
+
+type ResponsiveType = {
+  [screen in ResponsiveScreens]:
+    | Heading
+    | Content
+    | FontStyle
+    | Border
+    | Elevation;
+};
+
+type Typography = {
+  heading: ResponsiveType;
+  title: ResponsiveType;
+  subtitle: ResponsiveType;
+  button: ResponsiveType;
+  caption: ResponsiveType;
+};
+
+interface ResponsiveElevationStyle {
+  small: Elevation;
+  large: Elevation;
+}
+
+export interface Theme {
+  screens: Breakpoint;
+  colors: Record<string, Color>;
+  font: Font;
+  typography: Typography;
+  border: ResponsiveType;
+  elevation: Record<number, Elevation | ResponsiveElevationStyle>;
+}
+
+export const theme: Theme = {
+  screens: screens,
 
   colors: {
-    amethyst,
-    heliodor,
-    onyx,
-    alabaster,
-    jasper,
-    amber,
-    emerald,
-    carnelian,
-    citrine,
-    peridot,
-    rhodochrosite,
+    primary: amethyst,
+    secondary: heliodor,
+    tertiary: alabaster,
+  },
+
+  font: {
+    primary: "Zilla Slab",
+    generic: "serif",
   },
 
   typography: {
-    font: {
-      primary: "Zilla Slab",
-      primaryUrl:
-        "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Zilla+Slab:wght@400;600;700&display=swap",
-      generic: "serif",
-    },
     heading: {
       small: headingSm,
       large: headingLg,
@@ -96,7 +122,7 @@ export const theme = {
   },
 
   elevation: {
-    surface,
+    0: surface,
     1: {
       small: levelOneSm,
       large: levelOneLg,

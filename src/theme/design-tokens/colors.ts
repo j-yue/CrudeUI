@@ -11,7 +11,7 @@ type ColorScale =
   | "90"
   | "100";
 
-type Color = {
+export type Color = {
   [Scale in ColorScale]: string;
 };
 

@@ -1,15 +1,15 @@
 //font weight, font size, line height
-type FontStyle = [weight: number, size: string, height: string];
+export type FontStyle = [weight: number, size: string, height: string];
 
 // headings have levels 1-6, most other types have 2 emphasis levels
 type HeadingScale = "1" | "2" | "3" | "4" | "5" | "6";
 type ContentScale = "high" | "regular";
 
-type Heading = {
+export type Heading = {
   [Scale in HeadingScale]: FontStyle;
 };
 
-type Content = {
+export type Content = {
   [Scale in ContentScale]: FontStyle;
 };
 
@@ -62,4 +62,11 @@ export const captionSm: Content = {
 export const captionLg: Content = {
   high: [600, "1.25rem", "1.5rem"],
   regular: [400, "1.25rem", "1.5rem"],
+};
+
+export type Font = {
+  /** name of primary font */
+  primary: string;
+  /** name of genric fallback font */
+  generic: string;
 };
