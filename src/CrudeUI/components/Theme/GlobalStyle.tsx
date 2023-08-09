@@ -1,12 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
-interface IGlobalStyle {
-  // string representation of theme that is ready to be injected as css variables
-  themeStr: string;
+interface GlobalStyleProps {
+  //additional styles to inject
+  styles?: string;
 }
 
-export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
-:root {
- ${(props) => props.themeStr}
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
+body {
+  margin: 0;
+  font-family: 'Zilla Slab', serif;
 }
+
+${(props) => props.styles}
 `;
