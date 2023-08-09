@@ -1,16 +1,15 @@
 import { CrudeUI } from "./CrudeUI";
 
 function App() {
-  const { Button, Fab, Theme } = CrudeUI;
+  const { Heading, Text, ThemeProvider } = CrudeUI;
 
   return (
-    <Theme>
+    <ThemeProvider>
       <main>
-        <h1>Crude UI</h1>
-        <Button />
-        <Fab />
+        <Heading />
+        <Text />
       </main>
-    </Theme>
+    </ThemeProvider>
   );
 }
 
