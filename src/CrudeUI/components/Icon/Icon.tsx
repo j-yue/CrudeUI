@@ -1,17 +1,14 @@
 //icon is aspect ratio image with 1:1 dimensions
 //default is that it is a decorative icon, so empty alt
 import { styled } from "styled-components";
-import AspectRatio from "../AspectRatio/AspectRatio";
 
 type IconSizes = "sm" | "md";
 
-export interface IconProps {
-  /** url of image */
-  src: string;
-  /** alt for image, leave empty if decorative */
-  alt?: string;
+interface IconProps {
   /** size of icon */
   size: IconSizes;
+  /** image or svg to be used as icon */
+  children: React.ReactNode;
 }
 
 type ImgContainerProps = {
@@ -22,6 +19,7 @@ const IconContainer = styled.span<ImgContainerProps>`
   ${({ size }) => {
     const width = size === "sm" ? "1.5rem" : "2rem";
     return `
+      color: inherit;
       display: inline-block;
       width: ${width};
       height: ${width};
@@ -29,10 +27,6 @@ const IconContainer = styled.span<ImgContainerProps>`
   }}
 `;
 
-export default function Icon({ src, alt = "", size = "sm" }: IconProps) {
-  return (
-    <IconContainer size={size}>
-      <AspectRatio ratio={{ width: 1, height: 1 }} src={src} alt={alt} />
-    </IconContainer>
-  );
+export default function Icon({ size = "sm", children }: IconProps) {
+  return <IconContainer size={size}>{children}</IconContainer>;
 }
