@@ -6,6 +6,7 @@ import AspectRatio from "./components/AspectRatio/AspectRatio";
 import Grid from "./components/Grid/Grid";
 import Link from "./components/Link/Link";
 import ThemeProvider from "./components/Theme/ThemeProvider";
+import Icon from "./components/Icon/Icon";
 
 export const CrudeUI = {
   Button,
@@ -16,4 +17,5 @@ export const CrudeUI = {
   Grid,
   Link,
   ThemeProvider,
+  Icon,
 };

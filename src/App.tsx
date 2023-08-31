@@ -1,8 +1,9 @@
 import { CrudeUI } from "./CrudeUI";
 import placeholder from "./public/images/placeholder.png";
-
+import add from "./public/icons/add.svg";
+import search from "./public/icons/search.svg";
 function App() {
-  const { AspectRatio, Heading, Text, ThemeProvider } = CrudeUI;
+  const { ThemeProvider, AspectRatio, Heading, Text, Icon } = CrudeUI;
   return (
     <ThemeProvider>
       <main>
@@ -13,6 +14,10 @@ function App() {
           src={placeholder}
           alt="placeholder image"
         />
+        <Icon src={add} size="md" />
+        <Icon src={add} size="sm" />
+        <Icon src={search} size="md" />
+        <Icon src={search} size="sm" />
       </main>
     </ThemeProvider>
   );
