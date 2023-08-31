@@ -10,7 +10,7 @@ export function getDesktopBreakpoint(theme: Theme) {
   return getBreakpoint(theme, "large");
 }
 
-function responsiveWrapper(minWidth: string, innerString: string) {
+export function responsiveWrapper(minWidth: string, innerString: string) {
   return `@media (min-width: ${minWidth}) {\n\t${innerString};\n}`;
 }
 
