@@ -5,7 +5,6 @@ import {
   fontStyleToCSS,
 } from "../../utilities/styleHelpers";
 import { Theme } from "../../types";
-import React from "react";
 
 type variant = "primary" | "secondary" | "tertiary";
 type size = "sm" | "md" | "lg";
