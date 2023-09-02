@@ -4,7 +4,7 @@ import {
   amethyst,
   heliodor,
   alabaster,
-  // onyx,
+  onyx,
   // jasper,
   // amber,
   // emerald,
@@ -85,6 +85,7 @@ export const theme: Theme = {
     primary: amethyst,
     secondary: heliodor,
     tertiary: alabaster,
+    outline: onyx,
   },
 
   font: {

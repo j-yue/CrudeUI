@@ -11,5 +11,16 @@ body {
   font-family: 'Zilla Slab', serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font: inherit;
+  padding: 0;
+}
+
 ${(props) => props.styles}
 `;

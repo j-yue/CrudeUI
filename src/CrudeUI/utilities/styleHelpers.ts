@@ -1,6 +1,6 @@
 //helper functions to generate styles for styled components based on theme
 import { FontStyle } from "../theme/design-tokens/typography";
-import { Theme } from "../theme/theme";
+import { Theme } from "../types";
 
 function getBreakpoint(theme: Theme, breakpoint: string) {
   return theme.screens[breakpoint];
