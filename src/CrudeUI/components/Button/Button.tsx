@@ -4,10 +4,12 @@ import {
   generateResponsiveStyles,
   fontStyleToCSS,
 } from "../../utilities/styleHelpers";
-import { Theme } from "../../types";
+import { Theme, genericFunction } from "../../types";
+import React from "react";
 
-type variant = "primary" | "secondary" | "tertiary";
-type size = "sm" | "md" | "lg";
+export type variant = "primary" | "secondary" | "tertiary";
+export type icon = React.ReactNode;
+export type size = "sm" | "md" | "lg";
 
 //did not implement 'loading' state
 interface ButtonProps {
@@ -16,13 +18,13 @@ interface ButtonProps {
   /** icon position */
   iconPosition: "none" | "leading" | "trailing";
   /** pass icon as child */
-  icon?: React.ReactNode;
+  icon?: icon;
   /** button state */
   state?: "default" | "disabled";
   /** variant color */
   variant: variant;
   /** onClick event handler */
-  handleClick: (...args: unknown[]) => unknown;
+  handleClick: genericFunction;
   /** text to render */
   children: React.ReactNode;
 }

@@ -1,8 +1,9 @@
 import { CrudeUI } from "./CrudeUI";
 import placeholder from "./public/images/placeholder.png";
 import AddIcon from "./CrudeUI/components/Icon/SvgIcons/AddIcon";
+import CloseIcon from "./CrudeUI/components/Icon/SvgIcons/CloseIcon";
 function App() {
-  const { ThemeProvider, AspectRatio, Heading, Text, Icon, Link, Button } =
+  const { ThemeProvider, AspectRatio, Heading, Text, Icon, Link, Button, Fab } =
     CrudeUI;
 
   return (
@@ -43,6 +44,7 @@ function App() {
         >
           el button
         </Button>
+        <Fab icon={<CloseIcon />} handleClick={() => console.log("fab")} />
       </main>
     </ThemeProvider>
   );
