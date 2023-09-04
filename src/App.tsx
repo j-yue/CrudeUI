@@ -45,6 +45,7 @@ function App() {
           el button
         </Button>
         <Fab icon={<CloseIcon />} handleClick={() => console.log("fab")} />
+        <Button>Default props on button</Button>
       </main>
     </ThemeProvider>
   );

@@ -14,17 +14,17 @@ export type size = "sm" | "md" | "lg";
 //did not implement 'loading' state
 interface ButtonProps {
   /** button size */
-  size: size;
+  size?: size;
   /** icon position */
-  iconPosition: "none" | "leading" | "trailing";
+  iconPosition?: "none" | "leading" | "trailing";
   /** pass icon as child */
   icon?: icon;
   /** button state */
   state?: "default" | "disabled";
   /** variant color */
-  variant: variant;
+  variant?: variant;
   /** onClick event handler */
-  handleClick: genericFunction;
+  handleClick?: genericFunction;
   /** text to render */
   children: React.ReactNode;
 }
@@ -146,10 +146,10 @@ const StyledButton = styled.button<StyledButtonProps>`
 export default function Button({
   size = "sm",
   iconPosition = "none",
-  icon,
+  icon = null,
   state = "default",
   variant = "primary",
-  handleClick,
+  handleClick = () => console.log("button pressed"),
   children = "button",
 }: ButtonProps) {
   const ButtonIcon = () => <Icon>{icon}</Icon>;
