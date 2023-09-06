@@ -2,9 +2,19 @@ import { CrudeUI } from "./CrudeUI";
 import placeholder from "./public/images/placeholder.png";
 import AddIcon from "./CrudeUI/components/Icon/SvgIcons/AddIcon";
 import CloseIcon from "./CrudeUI/components/Icon/SvgIcons/CloseIcon";
+import MailIcon from "./CrudeUI/components/Icon/SvgIcons/MailIcon";
 function App() {
-  const { ThemeProvider, AspectRatio, Heading, Text, Icon, Link, Button, Fab } =
-    CrudeUI;
+  const {
+    ThemeProvider,
+    AspectRatio,
+    Heading,
+    Text,
+    Icon,
+    Link,
+    Button,
+    Fab,
+    Input,
+  } = CrudeUI;
 
   return (
     <ThemeProvider>
@@ -16,13 +26,11 @@ function App() {
           src={placeholder}
           alt="placeholder image"
         />
-
         <Link trailingIcon href="/" text="El Link">
           <Icon>
             <AddIcon />
           </Icon>
         </Link>
-
         <br />
         <Button
           size="sm"
@@ -33,7 +41,6 @@ function App() {
         >
           el button
         </Button>
-
         <Button
           size="lg"
           iconPosition="trailing"
@@ -46,6 +53,14 @@ function App() {
         </Button>
         <Fab icon={<CloseIcon />} handleClick={() => console.log("fab")} />
         <Button>Default props on button</Button>
+        <Input
+          label="email"
+          leadingIcon={<MailIcon />}
+          message="Helper text that can extend up to a maximum of 2 lines"
+          error="Error text that can extend up to a maximum of 2 lines"
+          placeholder="Placeholder"
+          triggerError={(_value) => _value == "email"}
+        />
       </main>
     </ThemeProvider>
   );

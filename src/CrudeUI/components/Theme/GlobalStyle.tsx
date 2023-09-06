@@ -22,5 +22,16 @@ button {
   padding: 0;
 }
 
+input {
+  font-family: inherit;
+  border: none;
+  border-radius: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+
 ${(props) => props.styles}
 `;

@@ -7,6 +7,7 @@ import Grid from "./components/Grid/Grid";
 import Link from "./components/Link/Link";
 import ThemeProvider from "./components/Theme/ThemeProvider";
 import Icon from "./components/Icon/Icon";
+import Input from "./components/Input/Input";
 
 export const CrudeUI = {
   Button,
@@ -18,4 +19,5 @@ export const CrudeUI = {
   Link,
   ThemeProvider,
   Icon,
+  Input,
 };

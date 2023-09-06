@@ -42,3 +42,7 @@ export function generateResponsiveFontStyles(
     minWidth
   );
 }
+
+export function typeGuard(obj: object, property: string) {
+  return obj[property as keyof typeof obj];
+}

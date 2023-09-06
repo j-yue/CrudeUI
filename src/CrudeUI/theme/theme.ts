@@ -5,7 +5,7 @@ import {
   heliodor,
   alabaster,
   onyx,
-  // jasper,
+  jasper,
   // amber,
   // emerald,
   // carnelian,
@@ -86,6 +86,7 @@ export const theme: Theme = {
     secondary: heliodor,
     tertiary: alabaster,
     outline: onyx,
+    error: jasper,
   },
 
   font: {
