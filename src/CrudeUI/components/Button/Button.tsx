@@ -3,6 +3,7 @@ import Icon from "../Icon/Icon";
 import {
   generateResponsiveStyles,
   fontStyleToCSS,
+  typeGuard,
 } from "../../utilities/styleHelpers";
 import { Theme, genericFunction } from "../../types";
 import React from "react";
@@ -54,7 +55,7 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
   const {
     colors,
     border: { small },
-    elevation,
+    elevation: { "2": _elevation },
     typography: { button },
     screens,
   } = theme;
@@ -67,18 +68,11 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
   const colorOutline = colors.outline[0];
   const { small: fontSmall, large: fontLarge } = button;
 
-  //declare variables to be assigned in type guard blocks
-  let borderThin, borderThick, shadowThin, shadowThick;
+  const borderThin = typeGuard(small, "default");
+  const borderThick = typeGuard(small, "emphasis");
 
-  if ("default" in small && "emphasis" in small) {
-    borderThin = small.default;
-    borderThick = small.emphasis;
-  }
-
-  if ("small" in elevation[2] && "large" in elevation[2]) {
-    shadowThin = elevation[2].small.x;
-    shadowThick = elevation[2].large.x;
-  }
+  const shadowThin = typeGuard(_elevation, "small")["x"];
+  const shadowThick = typeGuard(_elevation, "large")["x"];
 
   //form base CSS rules
   const mobileRules = `

@@ -4,6 +4,7 @@ import { Theme } from "../../theme/theme";
 import {
   generateResponsiveFontStyles,
   getDesktopBreakpoint,
+  typeGuard,
 } from "../../utilities/styleHelpers";
 
 type TextType = "title" | "subtitle" | "caption";
@@ -27,13 +28,11 @@ const generateStyles = (
   emphasis: EmphasisLevel
 ) => {
   const { small, large } = theme.typography[type];
-  if ("high" in small && "high" in large) {
-    return generateResponsiveFontStyles(
-      small[emphasis],
-      large[emphasis],
-      getDesktopBreakpoint(theme)
-    );
-  }
+  return generateResponsiveFontStyles(
+    typeGuard(small, emphasis),
+    typeGuard(large, emphasis),
+    getDesktopBreakpoint(theme)
+  );
 };
 
 const StyledText = styled.span<StyledTextProps>`

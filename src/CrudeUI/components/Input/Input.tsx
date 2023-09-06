@@ -78,13 +78,11 @@ const InputWrapper = styled.div<{
 const StyledInput = styled.input`
   ${({ theme }) => {
     const { small, large } = theme.typography.title;
-    if ("regular" in small && "regular" in large) {
-      return generateResponsiveFontStyles(
-        small.regular,
-        large.regular,
-        getDesktopBreakpoint(theme)
-      );
-    }
+    return generateResponsiveFontStyles(
+      typeGuard(small, "regular"),
+      typeGuard(large, "regular"),
+      getDesktopBreakpoint(theme)
+    );
   }}
   padding: 0;
   flex: 1;
