@@ -13,11 +13,13 @@ interface StyledHeadingProps {
   $variant?: HeadingLevel;
 }
 
-interface HeadingProps extends StyledHeadingProps {
+interface HeadingProps {
   /** heading element that will be rendered */
   as?: HeadingTag;
   /** text to render */
   text?: string;
+  /** heading appearance */
+  variant?: HeadingLevel;
 }
 
 const generateStyleRules = (variant: HeadingLevel, theme: Theme) => {
@@ -33,7 +35,7 @@ const generateStyleRules = (variant: HeadingLevel, theme: Theme) => {
 };
 
 const StyledHeading = styled.div<StyledHeadingProps>`
-  ${({ variant = 1, theme }) => generateStyleRules(variant, theme)}
+  ${({ $variant = 1, theme }) => generateStyleRules($variant, theme)}
 `;
 
 export default function Heading({
