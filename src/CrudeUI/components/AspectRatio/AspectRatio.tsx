@@ -18,7 +18,7 @@ type StyledImgProps = {
 };
 
 type StyledImgContainerProps = {
-  ratio: Ratio;
+  $ratio: Ratio;
 };
 
 const StyledImg = styled.img<StyledImgProps>`
@@ -32,7 +32,7 @@ const StyledImg = styled.img<StyledImgProps>`
 
 const StyledImgContainer = styled.div<StyledImgContainerProps>`
   position: relative;
-  padding-top: ${({ ratio: { width, height } }) => (100 * height) / width}%;
+  padding-top: ${({ $ratio: { width, height } }) => (100 * height) / width}%;
 `;
 
 //use padding-top hack described by Ahmad Shadeed - https://ishadeed.com/article/css-aspect-ratio/
@@ -42,7 +42,7 @@ export default function AspectRatio({
   alt = "",
 }: AspectRatioProps) {
   return (
-    <StyledImgContainer ratio={ratio}>
+    <StyledImgContainer $ratio={ratio}>
       <StyledImg src={src} alt={alt} />
     </StyledImgContainer>
   );

@@ -14,10 +14,14 @@ interface StyledTextProps {
   /** appearance */
   type?: TextType;
   /** variant */
-  emphasis?: EmphasisLevel;
+  $emphasis?: EmphasisLevel;
 }
 
-interface TextProps extends StyledTextProps {
+interface TextProps {
+  /** appearance */
+  type?: TextType;
+  /** variant */
+  emphasis?: EmphasisLevel;
   /** text to render */
   text?: string;
 }
@@ -36,8 +40,8 @@ const generateStyles = (
 };
 
 const StyledText = styled.span<StyledTextProps>`
-  ${({ type = "subtitle", emphasis = "regular", theme }) =>
-    generateStyles(theme, type, emphasis)}
+  ${({ type = "subtitle", $emphasis = "regular", theme }) =>
+    generateStyles(theme, type, $emphasis)}
 `;
 
 export default function Text({
@@ -46,7 +50,7 @@ export default function Text({
   text = "Regular subtitle text",
 }: TextProps) {
   return (
-    <StyledText type={type} emphasis={emphasis}>
+    <StyledText type={type} $emphasis={emphasis}>
       {text}
     </StyledText>
   );

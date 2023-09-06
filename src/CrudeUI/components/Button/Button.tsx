@@ -32,7 +32,7 @@ interface ButtonProps {
 
 interface StyledButtonProps {
   size: size;
-  variant: variant;
+  $variant: variant;
 }
 
 const padding = {
@@ -132,8 +132,8 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
 };
 
 const StyledButton = styled.button<StyledButtonProps>`
-  ${({ size, variant, theme }) => {
-    return generateStyleRules(size, variant, theme);
+  ${({ size, $variant, theme }) => {
+    return generateStyleRules(size, $variant, theme);
   }}
 `;
 
@@ -150,7 +150,7 @@ export default function Button({
   return (
     <StyledButton
       size={size}
-      variant={variant}
+      $variant={variant}
       onClick={handleClick}
       disabled={state === "disabled"}
     >

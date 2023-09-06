@@ -10,7 +10,7 @@ type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 interface StyledHeadingProps {
   /** heading appearance */
-  variant?: HeadingLevel;
+  $variant?: HeadingLevel;
 }
 
 interface HeadingProps extends StyledHeadingProps {
@@ -44,7 +44,7 @@ export default function Heading({
   const Tag = as;
   return (
     <Tag style={{ margin: 0 }}>
-      <StyledHeading variant={variant}>{text}</StyledHeading>
+      <StyledHeading $variant={variant}>{text}</StyledHeading>
     </Tag>
   );
 }
