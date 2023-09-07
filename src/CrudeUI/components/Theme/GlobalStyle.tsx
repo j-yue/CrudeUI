@@ -8,7 +8,11 @@ interface GlobalStyleProps {
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
 body {
   margin: 0;
-  font-family: 'Zilla Slab', serif;
+  font-family: ${({
+    theme: {
+      font: { primary, generic },
+    },
+  }) => `${primary}, ${generic}`};
 }
 
 *, *::before, *::after {
@@ -31,7 +35,6 @@ input {
 input:focus {
   outline: none;
 }
-
 
 ${(props) => props.styles}
 `;
