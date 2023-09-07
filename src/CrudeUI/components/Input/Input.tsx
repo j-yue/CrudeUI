@@ -58,7 +58,6 @@ const InputWrapper = styled.div<{
       display: flex;
       flex-flow: column nowrap;
       gap: 0.5rem;
-      padding: 1rem;
     `;
 
     const desktopRules = `
