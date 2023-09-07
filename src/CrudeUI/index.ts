@@ -10,6 +10,7 @@ import Link from "./components/Link/Link";
 import ThemeProvider from "./components/Theme/ThemeProvider";
 import Icon from "./components/Icon/Icon";
 import Input from "./components/Input/Input";
+import { theme } from "./theme/theme";
 
 export const CrudeUI = {
   Button,
@@ -24,4 +25,5 @@ export const CrudeUI = {
   ThemeProvider,
   Icon,
   Input,
+  defaultTheme: theme,
 };
