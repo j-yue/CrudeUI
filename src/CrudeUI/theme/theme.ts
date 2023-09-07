@@ -6,12 +6,12 @@ import {
   alabaster,
   onyx,
   jasper,
-  // amber,
-  // emerald,
-  // carnelian,
-  // citrine,
-  // peridot,
-  // rhodochrosite,
+  amber,
+  emerald,
+  carnelian,
+  citrine,
+  peridot,
+  rhodochrosite,
   Color,
 } from "./design-tokens/colors";
 
@@ -71,10 +71,25 @@ interface ResponsiveElevationStyle {
   large: Elevation;
 }
 
+const colorList = [
+  amethyst,
+  heliodor,
+  alabaster,
+  onyx,
+  jasper,
+  amber,
+  emerald,
+  carnelian,
+  citrine,
+  peridot,
+  rhodochrosite,
+];
+
 export interface Theme {
   screens: Breakpoint;
   spacing: Spacing;
   colors: Record<string, Color>;
+  colorList: Color[];
   font: Font;
   typography: Typography;
   border: ResponsiveType;
@@ -93,6 +108,8 @@ export const theme: Theme = {
     outline: onyx,
     error: jasper,
   },
+
+  colorList: colorList,
 
   font: {
     primary: "Zilla Slab",
