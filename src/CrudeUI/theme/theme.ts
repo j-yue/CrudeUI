@@ -45,6 +45,8 @@ import {
   Elevation,
 } from "./design-tokens/elevation";
 
+import { Spacing, spacing } from "./design-tokens/spacing";
+
 type ResponsiveScreens = "small" | "large";
 
 type ResponsiveType = {
@@ -71,6 +73,7 @@ interface ResponsiveElevationStyle {
 
 export interface Theme {
   screens: Breakpoint;
+  spacing: Spacing;
   colors: Record<string, Color>;
   font: Font;
   typography: Typography;
@@ -80,6 +83,8 @@ export interface Theme {
 
 export const theme: Theme = {
   screens: screens,
+
+  spacing: spacing,
 
   colors: {
     primary: amethyst,

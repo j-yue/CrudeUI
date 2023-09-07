@@ -14,7 +14,28 @@ function App() {
     Button,
     Fab,
     Input,
+    Grid,
+    Row,
+    Column,
   } = CrudeUI;
+
+  const gridDimensions = [
+    [1, 11],
+    [2, 10],
+    [3, 9],
+    [4, 8],
+    [5, 7],
+    [6, 6],
+    [7, 5],
+    [8, 4],
+    [9, 3],
+    [10, 2],
+    [11, 1],
+  ];
+
+  const DemoCell = ({ children }) => {
+    return <div style={{ background: "pink" }}>{children}</div>;
+  };
 
   return (
     <ThemeProvider>
@@ -61,6 +82,19 @@ function App() {
           placeholder="Placeholder"
           triggerError={(_value) => _value == "email"}
         />
+        <Grid columnCount={12} gutter="1rem" paddingX="1rem" paddingY="1rem">
+          {gridDimensions.map((pair, index) => {
+            return (
+              <Row key={index}>
+                {pair.map((value, index) => (
+                  <Column width={value} key={index}>
+                    <DemoCell>{value}</DemoCell>
+                  </Column>
+                ))}
+              </Row>
+            );
+          })}
+        </Grid>
       </main>
     </ThemeProvider>
   );
