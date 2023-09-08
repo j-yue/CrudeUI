@@ -36,5 +36,9 @@ input:focus {
   outline: none;
 }
 
+p {
+  margin: 0;
+}
+
 ${(props) => props.styles}
 `;

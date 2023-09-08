@@ -39,7 +39,7 @@ const generateStyles = (
   );
 };
 
-const StyledText = styled.span<StyledTextProps>`
+const StyledText = styled.p<StyledTextProps>`
   ${({ type = "subtitle", $emphasis = "regular", theme }) =>
     generateStyles(theme, type, $emphasis)}
 `;
