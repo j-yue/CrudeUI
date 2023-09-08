@@ -71,7 +71,7 @@ interface ResponsiveElevationStyle {
   large: Elevation;
 }
 
-const colorList = [
+const colorList = {
   amethyst,
   heliodor,
   alabaster,
@@ -83,13 +83,17 @@ const colorList = [
   citrine,
   peridot,
   rhodochrosite,
-];
+};
+
+type ColorList = {
+  [index: string]: Color;
+};
 
 export interface Theme {
   screens: Breakpoint;
   spacing: Spacing;
   colors: Record<string, Color>;
-  colorList: Color[];
+  colorList: ColorList;
   font: Font;
   typography: Typography;
   border: ResponsiveType;
