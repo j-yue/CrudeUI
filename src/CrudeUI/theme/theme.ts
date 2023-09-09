@@ -150,7 +150,10 @@ export const theme: Theme = {
   },
 
   elevation: {
-    0: surface,
+    0: {
+      small: surface,
+      large: surface,
+    },
     1: {
       small: levelOneSm,
       large: levelOneLg,

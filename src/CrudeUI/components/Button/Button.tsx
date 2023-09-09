@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 import Icon from "../Icon/Icon";
+import BorderShadow from "../BorderShadow/BorderShadow";
 import {
   generateResponsiveStyles,
   fontStyleToCSS,
   typeGuard,
 } from "../../utilities/styleHelpers";
 import { Theme, genericFunction } from "../../types";
-import React from "react";
 
 export type variant = "primary" | "secondary" | "tertiary";
 export type icon = React.ReactNode;
@@ -55,7 +55,6 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
   const {
     colors,
     border: { small },
-    elevation: { "2": _elevation },
     typography: { button },
     screens,
   } = theme;
@@ -71,42 +70,28 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
   const borderThin = typeGuard(small, "default");
   const borderThick = typeGuard(small, "emphasis");
 
-  const shadowThin = typeGuard(_elevation, "small")["x"];
-  const shadowThick = typeGuard(_elevation, "large")["x"];
-
   //form base CSS rules
   const mobileRules = `
     --padding: ${mobile};
     --color: ${colorDefault};
     --colorOutline: ${colorOutline};
     --borderWidth: ${borderThin};
-    --shadow: ${shadowThin};
     ${"weight" in fontSmall ? fontStyleToCSS(fontSmall) : ""}
     letter-spacing: 0.05625rem;
     display: flex;
     gap: .5rem;
-    position: relative;
     background-color: var(--color);
-    border: var(--borderWidth) solid var(--colorOutline);
-    box-shadow: var(--shadow) var(--shadow) 0px 0px var(--colorOutline);
     padding: var(--padding);
-
-    &:focus::before, &:active::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      border: var(--borderWidth) solid var(--colorOutline);
-    }
+    border: var(--borderWidth) solid var(--colorOutline);
 
     &:hover {
       --color: ${colorEmphasis};
+      cursor: pointer;
     }
 
     &:active {
       --color: ${colorEmphasis};
+      --borderWidth: ${borderThick};
     }
 
     &:disabled {
@@ -123,7 +108,6 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
   const desktopRules = `
     --padding: ${desktop};
     --borderWidth: ${borderThick};
-    --shadow: ${shadowThick};
     ${"weight" in fontLarge ? fontStyleToCSS(fontLarge) : ""}
     letter-spacing: 0.075rem;
   `;
@@ -148,15 +132,17 @@ export default function Button({
 }: ButtonProps) {
   const ButtonIcon = () => <Icon>{icon}</Icon>;
   return (
-    <StyledButton
-      size={size}
-      $variant={variant}
-      onClick={handleClick}
-      disabled={state === "disabled"}
-    >
-      {iconPosition === "leading" && <ButtonIcon />}
-      {state === "default" && children}
-      {iconPosition === "trailing" && <ButtonIcon />}
-    </StyledButton>
+    <BorderShadow elevation={2} thickness="default">
+      <StyledButton
+        size={size}
+        $variant={variant}
+        onClick={handleClick}
+        disabled={state === "disabled"}
+      >
+        {iconPosition === "leading" && <ButtonIcon />}
+        {state === "default" && children}
+        {iconPosition === "trailing" && <ButtonIcon />}
+      </StyledButton>
+    </BorderShadow>
   );
 }
