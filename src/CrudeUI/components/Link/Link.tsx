@@ -60,7 +60,7 @@ export default function Link({
   children,
 }: LinkProps) {
   return (
-    <StyledLink href={href}>
+    <StyledLink href={href} target="_blank">
       <Text type="subtitle" emphasis="high" text={text} />
       {trailingIcon && children}
     </StyledLink>
