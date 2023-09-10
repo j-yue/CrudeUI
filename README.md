@@ -25,10 +25,34 @@ function App() {
 }
 ```
 
+## Theming
+
+Crude UI comes with a wrapper for styled-component's ThemeProvider that passes a default theme based on the Crude Design System. Crude components need to be nested in a ThemeProvider component to be styled.
+
+```jsx
+import { ThemeProvider } from "crude-ui";
+
+function App() {
+  return <ThemeProvider>{children}</ThemeProvider>;
+}
+```
+
+Design tokens can be accessed by importing the default theme
+
+```jsx
+import { defaultTheme } from "crude-ui";
+```
+
+The theme can also be accessed with styled-components
+
+```jsx
+import { styled } from "styled-components";
+
+const ErrorMessage = styled.p`
+  color: ${({ theme: { colors } }) => colors.error[0]};
+`;
+```
+
 ## Documentation
 
 Wip storbook
-
-## Theming
-
-wip
