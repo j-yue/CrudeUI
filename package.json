@@ -1,6 +1,14 @@
 {
   "name": "crude-ui",
-  "private": true,
+  "description": "React UI Kit with neobrutalist aesthetic",
+  "keywords": [
+    "react",
+    "ui",
+    "neobrutal",
+    "neubrutal",
+    "crude ui",
+    "wip"
+  ],
   "version": "0.0.0",
   "type": "module",
   "scripts": {
