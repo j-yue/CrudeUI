@@ -4,8 +4,7 @@ import Heading from "./components/Heading/Heading";
 import Text from "./components/Text/Text";
 import AspectRatio from "./components/AspectRatio/AspectRatio";
 import Grid from "./components/Grid/Grid";
-import Row from "./components/Grid/Row";
-import Column from "./components/Grid/Column";
+import Cell from "./components/Grid/Cell";
 import Link from "./components/Link/Link";
 import ThemeProvider from "./components/Theme/ThemeProvider";
 import Icon from "./components/Icon/Icon";
@@ -19,8 +18,7 @@ export const CrudeUI = {
   Text,
   AspectRatio,
   Grid,
-  Row,
-  Column,
+  Cell,
   Link,
   ThemeProvider,
   Icon,

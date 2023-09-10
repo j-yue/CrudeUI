@@ -3,6 +3,7 @@ import placeholder from "./public/images/placeholder.png";
 import AddIcon from "./CrudeUI/components/Icon/SvgIcons/AddIcon";
 import CloseIcon from "./CrudeUI/components/Icon/SvgIcons/CloseIcon";
 import MailIcon from "./CrudeUI/components/Icon/SvgIcons/MailIcon";
+
 function App() {
   const {
     ThemeProvider,
@@ -15,8 +16,7 @@ function App() {
     Fab,
     Input,
     Grid,
-    Row,
-    Column,
+    Cell,
   } = CrudeUI;
 
   const gridDimensions = [
@@ -33,10 +33,22 @@ function App() {
     [11, 1],
   ];
 
-  const DemoCell = ({ children }) => {
-    return <div style={{ background: "pink" }}>{children}</div>;
-  };
-
+  const rand = () => 100 + Math.ceil(Math.random() * 100);
+  const cells = () =>
+    gridDimensions.map((pair) => {
+      return (
+        <Cell key={pair[0]} columnSpan={1}>
+          <div
+            style={{
+              width: rand() + "px",
+              height: rand() + "px",
+            }}
+          >
+            {pair[0]}
+          </div>
+        </Cell>
+      );
+    });
   return (
     <ThemeProvider>
       <main>
@@ -82,19 +94,8 @@ function App() {
           placeholder="Placeholder"
           triggerError={(_value) => _value == "email"}
         />
-        <Grid columnCount={12} gutter="1rem" paddingX="1rem" paddingY="1rem">
-          {gridDimensions.map((pair, index) => {
-            return (
-              <Row key={index}>
-                {pair.map((value, index) => (
-                  <Column width={value} key={index}>
-                    <DemoCell>{value}</DemoCell>
-                  </Column>
-                ))}
-              </Row>
-            );
-          })}
-        </Grid>
+
+        <Grid>{cells()}</Grid>
       </main>
     </ThemeProvider>
   );
