@@ -1,24 +1,22 @@
-import { CrudeUI } from "./CrudeUI";
+import {
+  ThemeProvider,
+  AspectRatio,
+  Heading,
+  Text,
+  Icon,
+  Link,
+  Button,
+  Fab,
+  Input,
+  Grid,
+  Cell,
+} from "./CrudeUI";
 import placeholder from "./public/images/placeholder.png";
 import AddIcon from "./CrudeUI/components/Icon/SvgIcons/AddIcon";
 import CloseIcon from "./CrudeUI/components/Icon/SvgIcons/CloseIcon";
 import MailIcon from "./CrudeUI/components/Icon/SvgIcons/MailIcon";
 
 function App() {
-  const {
-    ThemeProvider,
-    AspectRatio,
-    Heading,
-    Text,
-    Icon,
-    Link,
-    Button,
-    Fab,
-    Input,
-    Grid,
-    Cell,
-  } = CrudeUI;
-
   const gridDimensions = [
     [1, 11],
     [2, 10],
