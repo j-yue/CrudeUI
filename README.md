@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="crude.png" alt="Crude UI, React UI Kit with neobrutalist aesthetic.">
+   <img src="https://raw.githubusercontent.com/j-yue/CrudeUI/main/crude.png" alt="Crude UI, React UI Kit with neobrutalist aesthetic.">
 </div>
 
 <h1 align="center">Crude UI</h1>
