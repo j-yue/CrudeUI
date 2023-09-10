@@ -1,4 +1,4 @@
-import { useId, useState, useRef } from "react";
+import { useId, useState, useRef, ReactNode } from "react";
 import { styled } from "styled-components";
 import Label from "./Label";
 import Message from "./Message";
@@ -21,7 +21,7 @@ interface InputProps {
   /** placeholder text */
   placeholder: string;
   /** Decorative icon that precedes input field */
-  leadingIcon: React.ReactNode;
+  leadingIcon: ReactNode;
   /** if no inputValue, input is in 'placeholder' state */
   inputValue?: string;
   /** function that takes input value as argument that returns whether or not to reveal error message */

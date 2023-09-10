@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ReactNode } from "react";
 import {
   typeGuard,
   generateResponsiveStyles,
@@ -12,7 +13,7 @@ interface StyledShadowProps {
 
 interface ShadowProps {
   elevation: Elevation;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const StyledShadow = styled.div<StyledShadowProps>`

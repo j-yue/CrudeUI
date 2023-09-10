@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Border from "../Border/Border";
 import Shadow from "../Shadow/Shadow";
 import { Elevation, Thickness } from "../../types";
@@ -7,7 +8,7 @@ import { Elevation, Thickness } from "../../types";
 interface BorderShadowProps {
   elevation: Elevation;
   thickness: Thickness;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function BorderShadow({

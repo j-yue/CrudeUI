@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ReactNode } from "react";
 import {
   typeGuard,
   generateResponsiveStyles,
@@ -12,7 +13,7 @@ interface StyledBorderProps {
 
 interface BorderProps {
   thickness: Thickness;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const StyledBorder = styled.div<StyledBorderProps>`
