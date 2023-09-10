@@ -15,6 +15,16 @@
 npm i crude-ui
 ```
 
+## Using Components
+
+```jsx
+import { Heading } from "crude-ui";
+
+function App() {
+  return <Heading as="h1" variant={2} text="Hello World!" />;
+}
+```
+
 ## Documentation
 
 Wip storbook
