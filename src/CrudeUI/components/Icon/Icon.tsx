@@ -1,11 +1,12 @@
 //icon is aspect ratio image with 1:1 dimensions
 //default is that it is a decorative icon, so empty alt
 import { styled } from "styled-components";
+import { ReactNode } from "react";
 import { responsiveWrapper } from "../../utilities/styleHelpers";
 
 interface IconProps {
   /** image or svg to be used as icon */
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const setIconDimensions = (size: number) =>

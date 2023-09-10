@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ReactNode } from "react";
 import Text from "../Text/Text";
 import { responsiveWrapper } from "../../utilities/styleHelpers";
 
@@ -10,7 +11,7 @@ type LinkProps = {
   /** text displayed */
   text: string;
   /** icon to append to link text */
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const StyledLink = styled.a`

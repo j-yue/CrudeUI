@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ReactNode } from "react";
 import Icon from "../Icon/Icon";
 import BorderShadow from "../BorderShadow/BorderShadow";
 import {
@@ -9,7 +10,7 @@ import {
 import { Theme, genericFunction } from "../../types";
 
 export type variant = "primary" | "secondary" | "tertiary";
-export type icon = React.ReactNode;
+export type icon = ReactNode;
 export type size = "sm" | "md" | "lg";
 
 //did not implement 'loading' state
@@ -27,7 +28,7 @@ interface ButtonProps {
   /** onClick event handler */
   handleClick?: genericFunction;
   /** text to render */
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 interface StyledButtonProps {
