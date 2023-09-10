@@ -4,12 +4,14 @@
   "keywords": [
     "react",
     "ui",
+    "ui kit",
     "neobrutal",
     "neubrutal",
     "crude ui",
     "wip"
   ],
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "src/CrudeUI/index.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
