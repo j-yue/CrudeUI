@@ -14,7 +14,7 @@ import Shadow from "./components/Shadow/Shadow";
 import BorderShadow from "./components/BorderShadow/BorderShadow";
 import { theme } from "./theme/theme";
 
-export const CrudeUI = {
+export {
   Button,
   Fab,
   Heading,
@@ -29,5 +29,5 @@ export const CrudeUI = {
   Border,
   Shadow,
   BorderShadow,
-  defaultTheme: theme,
+  theme as defaultTheme,
 };
