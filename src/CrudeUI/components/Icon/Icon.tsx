@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { ReactNode } from "react";
 import { responsiveWrapper } from "../../utilities/styleHelpers";
 
-interface IconProps {
+export interface IconProps {
   /** image or svg to be used as icon */
   children: ReactNode;
 }
@@ -23,6 +23,6 @@ const IconContainer = styled.span`
   }}
 `;
 
-export default function Icon({ children }: IconProps) {
+export function Icon({ children }: IconProps) {
   return <IconContainer>{children}</IconContainer>;
 }

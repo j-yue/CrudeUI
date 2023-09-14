@@ -7,17 +7,17 @@ import {
   typeGuard,
 } from "../../utilities/styleHelpers";
 
-type TextType = "title" | "subtitle" | "caption";
-type EmphasisLevel = "high" | "regular";
+export type TextType = "title" | "subtitle" | "caption";
+export type EmphasisLevel = "high" | "regular";
 
-interface StyledTextProps {
+export interface StyledTextProps {
   /** appearance */
   type?: TextType;
   /** variant */
   $emphasis?: EmphasisLevel;
 }
 
-interface TextProps {
+export interface TextProps {
   /** appearance */
   type?: TextType;
   /** variant */
@@ -44,7 +44,7 @@ const StyledText = styled.p<StyledTextProps>`
     generateStyles(theme, type, $emphasis)}
 `;
 
-export default function Text({
+export function Text({
   type = "subtitle",
   emphasis = "regular",
   text = "Regular subtitle text",

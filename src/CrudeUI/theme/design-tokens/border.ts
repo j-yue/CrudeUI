@@ -1,4 +1,4 @@
-type BorderThickness = "default" | "emphasis";
+export type BorderThickness = "default" | "emphasis";
 
 export type Border = {
   [Thickness in BorderThickness]: string;

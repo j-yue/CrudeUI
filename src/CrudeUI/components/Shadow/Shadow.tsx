@@ -7,11 +7,11 @@ import {
 
 export type Elevation = 0 | 1 | 2 | 3;
 
-interface StyledShadowProps {
+export interface StyledShadowProps {
   $elevation: Elevation;
 }
 
-interface ShadowProps {
+export interface ShadowProps {
   elevation: Elevation;
   children: ReactNode;
 }
@@ -47,6 +47,6 @@ const StyledShadow = styled.div<StyledShadowProps>`
   }}
 `;
 
-export default function Shadow({ elevation, children }: ShadowProps) {
+export function Shadow({ elevation, children }: ShadowProps) {
   return <StyledShadow $elevation={elevation}>{children}</StyledShadow>;
 }

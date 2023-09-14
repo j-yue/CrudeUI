@@ -7,11 +7,11 @@ import {
 
 export type Thickness = "default" | "emphasis";
 
-interface StyledBorderProps {
+export interface StyledBorderProps {
   $thickness: Thickness;
 }
 
-interface BorderProps {
+export interface BorderProps {
   thickness: Thickness;
   children: ReactNode;
 }
@@ -39,6 +39,6 @@ const StyledBorder = styled.div<StyledBorderProps>`
   }}
 `;
 
-export default function Border({ thickness, children }: BorderProps) {
+export function Border({ thickness, children }: BorderProps) {
   return <StyledBorder $thickness={thickness}>{children}</StyledBorder>;
 }

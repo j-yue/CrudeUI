@@ -1,4 +1,4 @@
-type ColorScale =
+export type ColorScale =
   | "0"
   | "10"
   | "20"

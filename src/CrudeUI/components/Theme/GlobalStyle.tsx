@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-interface GlobalStyleProps {
+export interface GlobalStyleProps {
   //additional styles to inject
   styles?: string;
 }

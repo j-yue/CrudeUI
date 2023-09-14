@@ -1,8 +1,8 @@
-import Button from "../Button/Button";
+import { Button } from "../Button/Button";
 import AddIcon from "../Icon/SvgIcons/AddIcon";
 import { variant, icon, size, genericFunction } from "../../types";
 
-interface FabProps {
+export interface FabProps {
   /** button size */
   size?: size;
   /** color of button */
@@ -13,7 +13,7 @@ interface FabProps {
   handleClick: genericFunction;
 }
 
-export default function Fab({
+export function Fab({
   size = "sm",
   variant = "primary",
   icon = <AddIcon />,

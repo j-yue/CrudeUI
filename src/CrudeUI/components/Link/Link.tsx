@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 import { ReactNode } from "react";
-import Text from "../Text/Text";
+import { Text } from "../Text/Text";
 import { responsiveWrapper } from "../../utilities/styleHelpers";
 
-type LinkProps = {
+export type LinkProps = {
   /** if true, append children to link */
   trailingIcon: boolean;
   /** link href */
@@ -54,7 +54,7 @@ const StyledLink = styled.a`
   }}
 `;
 
-export default function Link({
+export function Link({
   trailingIcon,
   href = "",
   text = "Link",

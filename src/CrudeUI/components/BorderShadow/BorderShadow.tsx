@@ -1,17 +1,17 @@
 import { ReactNode } from "react";
-import Border from "../Border/Border";
-import Shadow from "../Shadow/Shadow";
+import { Border } from "../Border/Border";
+import { Shadow } from "../Shadow/Shadow";
 import { Elevation, Thickness } from "../../types";
 
 //compound component combining Border and Shadow components
 
-interface BorderShadowProps {
+export interface BorderShadowProps {
   elevation: Elevation;
   thickness: Thickness;
   children: ReactNode;
 }
 
-export default function BorderShadow({
+export function BorderShadow({
   elevation,
   thickness,
   children,

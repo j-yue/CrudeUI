@@ -1,23 +1,23 @@
 import { styled } from "styled-components";
 //aspect ratio is expressed as x:y or width:height
 //although the design system has defined ratios of 3/2 4/3 1/1 3/4 2/3, it doesn't make sense not to make is modular
-type Ratio = {
+export type Ratio = {
   width: number;
   height: number;
 };
 
-type AspectRatioProps = {
+export type AspectRatioProps = {
   ratio: Ratio;
   src: string; //img src
   alt?: string; //img alt
 };
 
-type StyledImgProps = {
+export type StyledImgProps = {
   src: string;
   alt?: string;
 };
 
-type StyledImgContainerProps = {
+export type StyledImgContainerProps = {
   $ratio: Ratio;
 };
 
@@ -36,7 +36,7 @@ const StyledImgContainer = styled.div<StyledImgContainerProps>`
 `;
 
 //use padding-top hack described by Ahmad Shadeed - https://ishadeed.com/article/css-aspect-ratio/
-export default function AspectRatio({
+export function AspectRatio({
   ratio = { width: 1, height: 1 },
   src = "",
   alt = "",

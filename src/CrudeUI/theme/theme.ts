@@ -47,9 +47,9 @@ import {
 
 import { Spacing, spacing } from "./design-tokens/spacing";
 
-type ResponsiveScreens = "small" | "large";
+export type ResponsiveScreens = "small" | "large";
 
-type ResponsiveType = {
+export type ResponsiveType = {
   [screen in ResponsiveScreens]:
     | Heading
     | Content
@@ -58,7 +58,7 @@ type ResponsiveType = {
     | Elevation;
 };
 
-type Typography = {
+export type Typography = {
   heading: ResponsiveType;
   title: ResponsiveType;
   subtitle: ResponsiveType;
@@ -66,7 +66,7 @@ type Typography = {
   caption: ResponsiveType;
 };
 
-interface ResponsiveElevationStyle {
+export interface ResponsiveElevationStyle {
   small: Elevation;
   large: Elevation;
 }
@@ -85,7 +85,7 @@ const colorList = {
   rhodochrosite,
 };
 
-type ColorList = {
+export type ColorList = {
   [index: string]: Color;
 };
 

@@ -1,21 +1,21 @@
 import { ReactNode } from "react";
 import { styled } from "styled-components";
 
-interface GridProps {
-  children: ReactNode;
+export interface GridProps {
+  children?: ReactNode;
   /** column count for layout; 12 for 12 column layout */
-  columnCount: number;
+  columnCount?: number;
   /** left and right padding */
-  paddingX: string;
+  paddingX?: string;
   /** top and bottom padding */
-  paddingY: string;
+  paddingY?: string;
   /** gap between rows*/
-  gutterRow: string;
+  gutterRow?: string;
   /** gap between columns */
-  gutterColumn: string;
+  gutterColumn?: string;
 }
 
-interface StyledGridProps {
+export interface StyledGridProps {
   $columnCount: number;
   $paddingX: string;
   $paddingY: string;
@@ -41,7 +41,7 @@ const StyledGrid = styled.div<StyledGridProps>`
   }}
 `;
 
-export default function Grid({
+export function Grid({
   columnCount = 4,
   paddingX = "1rem",
   paddingY = "1rem",

@@ -1,13 +1,13 @@
-import Text from "../Text/Text";
+import { Text } from "../Text/Text";
 
-interface LabelProps {
+export interface LabelProps {
   /** id of input field label is associated with */
   inputId: string;
   /** label text */
   text: string;
 }
 
-export default function Label({ text, inputId }: LabelProps) {
+export function Label({ text, inputId }: LabelProps) {
   return (
     <label htmlFor={inputId}>
       <Text text={text} type="subtitle" />

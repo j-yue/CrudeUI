@@ -1,8 +1,8 @@
 import { useId, useState, useRef, ReactNode } from "react";
 import { styled } from "styled-components";
-import Label from "./Label";
-import Message from "./Message";
-import Icon from "../Icon/Icon";
+import { Label } from "./Label";
+import { Message } from "./Message";
+import { Icon } from "../Icon/Icon";
 import CloseIcon from "../Icon/SvgIcons/CloseIcon";
 import {
   generateResponsiveFontStyles,
@@ -11,7 +11,7 @@ import {
   typeGuard,
 } from "../../utilities/styleHelpers";
 
-interface InputProps {
+export interface InputProps {
   /** text for label */
   label: string;
   /** text for message, instructions for filling out field */
@@ -125,7 +125,7 @@ const CloseButton = ({ ...props }) => (
 );
 
 //well it just seems like if input has no value, it is in placeholder mode...
-export default function Input({
+export function Input({
   label = "Label",
   message = "Helper text that can extend up to a maximum of 2 lines",
   error = "Error text that can extend up to a maximum of 2 lines",

@@ -5,15 +5,15 @@ import {
 } from "../../utilities/styleHelpers";
 import { Theme } from "../../types";
 
-type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-interface StyledHeadingProps {
+export interface StyledHeadingProps {
   /** heading appearance */
   $variant?: HeadingLevel;
 }
 
-interface HeadingProps {
+export interface HeadingProps {
   /** heading element that will be rendered */
   as?: HeadingTag;
   /** text to render */
@@ -38,7 +38,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
   ${({ $variant = 1, theme }) => generateStyleRules($variant, theme)}
 `;
 
-export default function Heading({
+export function Heading({
   as = "h1",
   variant = 1,
   text = "Heading 1",

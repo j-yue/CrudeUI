@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { ReactNode } from "react";
-import Icon from "../Icon/Icon";
-import BorderShadow from "../BorderShadow/BorderShadow";
+import { Icon } from "../Icon/Icon";
+import { BorderShadow } from "../BorderShadow/BorderShadow";
 import {
   generateResponsiveStyles,
   fontStyleToCSS,
@@ -14,7 +14,7 @@ export type icon = ReactNode;
 export type size = "sm" | "md" | "lg";
 
 //did not implement 'loading' state
-interface ButtonProps {
+export interface ButtonProps {
   /** button size */
   size?: size;
   /** icon position */
@@ -31,7 +31,7 @@ interface ButtonProps {
   children: ReactNode;
 }
 
-interface StyledButtonProps {
+export interface StyledButtonProps {
   size: size;
   $variant: variant;
 }
@@ -84,6 +84,7 @@ const generateStyleRules = (size: size, variant: variant, theme: Theme) => {
     background-color: var(--color);
     padding: var(--padding);
     border: var(--borderWidth) solid var(--colorOutline);
+    border-radius: 0;
 
     &:hover {
       --color: ${colorEmphasis};
@@ -122,7 +123,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   }}
 `;
 
-export default function Button({
+export function Button({
   size = "sm",
   iconPosition = "none",
   icon = null,

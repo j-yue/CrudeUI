@@ -1,11 +1,11 @@
-import Text from "../Text/Text";
+import { Text } from "../Text/Text";
 
-interface MessageProps {
+export interface MessageProps {
   /** message string */
   text: string;
 }
 
-export default function Message({ text }: MessageProps) {
+export function Message({ text }: MessageProps) {
   return (
     <span aria-live="polite">
       <Text text={text} type="caption" />
