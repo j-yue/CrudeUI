@@ -9,7 +9,12 @@
     "neubrutal",
     "crude ui"
   ],
-  "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j-yue/CrudeUI"
+  },
+  "version": "1.0.3",
+  "license": "MIT",
   "files": [
     "dist"
   ],
